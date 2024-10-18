@@ -2,6 +2,9 @@ package com.ensa;
 
 import java.io.*;
 import java.net.*;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 public class Client {
     final static String HOST = "localhost";
@@ -12,23 +15,27 @@ public class Client {
              ObjectOutputStream OOS = new ObjectOutputStream(socket.getOutputStream());
              BufferedReader reader = new BufferedReader(new InputStreamReader(System.in))) {
 
-            // Create a Voiture object
-            System.out.print("Entrez la matricule: ");
-            String mat = reader.readLine();
-            System.out.print("Entrez le carburant: ");
-            int carburant = Integer.parseInt(reader.readLine());
+            // Créer un objet Personne
+            SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
+            System.out.print("Entrez le nom: ");
+            String nom = reader.readLine();
+            System.out.print("Entrez le prénom: ");
+            String prenom = reader.readLine();
+            System.out.print("Entrez la date de naissance (dd/MM/yyyy): ");
+            String dateNaissanceStr = reader.readLine();
+            Date dateNaissance = sdf.parse(dateNaissanceStr);
 
-            Voiture voiture = new Voiture(mat, carburant);
-            // Send the Voiture object to the server
-            OOS.writeObject(voiture);
+            Personne personne = new Personne(nom, prenom, dateNaissance);
+            // Envoyer l'objet Personne au serveur
+            OOS.writeObject(personne);
             OOS.flush();
 
-            // Read the server's response
+            // Lire la réponse du serveur
             InputStream IS = socket.getInputStream();
             BufferedReader serverReader = new BufferedReader(new InputStreamReader(IS));
             String response = serverReader.readLine();
             System.out.println("Réponse du serveur: " + response);
-        } catch (IOException e) {
+        } catch (IOException | ParseException e) {
             e.printStackTrace();
         }
     }

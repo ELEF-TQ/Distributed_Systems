@@ -2,6 +2,7 @@ package com.ensa;
 
 import java.io.*;
 import java.net.*;
+import java.util.Date;
 
 public class Server {
     final static int PORT = 7878;
@@ -34,15 +35,19 @@ class Connexion implements Runnable {
     @Override
     public void run() {
         try (ObjectInputStream OIS = new ObjectInputStream(socket.getInputStream());
-             PrintWriter writer = new PrintWriter(socket.getOutputStream())) {
+             PrintWriter writer = new PrintWriter(socket.getOutputStream())) { // Auto-flush set to false
 
-            // Receive the Voiture object
-            Voiture voiture = (Voiture) OIS.readObject();
-            System.out.println("Voiture reçue : " + voiture);
+            // Recevoir l'objet Personne
+            Personne personne = (Personne) OIS.readObject();
+            System.out.println("Personne reçue : " + personne);
 
-            // Send a response with fuel level
-            writer.println("La voiture " + voiture.getMat() + " a " + voiture.getCarburant() + " unités de carburant.");
-            writer.flush();
+            // Calculer l'âge
+            Date dateCourante = new Date();
+            int age = personne.calcul_age(dateCourante);
+
+            // Envoyer la réponse avec flush explicite
+            writer.println("L'âge de " + personne + " est : " + age);
+            writer.flush(); // Explicit flush
 
         } catch (IOException | ClassNotFoundException e) {
             e.printStackTrace();
