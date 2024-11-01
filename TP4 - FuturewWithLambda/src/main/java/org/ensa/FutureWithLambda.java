@@ -6,9 +6,9 @@ import java.util.concurrent.*;
 public class FutureWithLambda {
 
     public static void main(String[] args) {
-        int fetchOrderTime = 1000;
-        int checkInventoryTime = 800;
-        int paymentTime = 600;
+        int fetchOrderTime = 300;
+        int checkInventoryTime = 150;
+        int paymentTime = 200;
 
         ExecutorService executor = Executors.newFixedThreadPool(3);
 

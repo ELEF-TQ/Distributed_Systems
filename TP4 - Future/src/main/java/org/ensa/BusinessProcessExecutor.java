@@ -6,9 +6,9 @@ public class BusinessProcessExecutor {
 
     public static void main(String[] args) {
         // Durées pour suspendre chaque tâche (en ms)
-        int fetchOrderTime = 1000;
-        int checkInventoryTime = 800;
-        int paymentTime = 600;
+        int fetchOrderTime = 300;
+        int checkInventoryTime = 150;
+        int paymentTime = 200;
 
         // Création d'un service d'exécution pour les tâches asynchrones
         ExecutorService executor = Executors.newFixedThreadPool(3);
