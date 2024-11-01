@@ -12,7 +12,7 @@ public class TestIOTasks {
         long begin, end, time = 0;
 
         // Create a fixed-size thread pool based on available processors
-        ExecutorService executor = Executors.newFixedThreadPool(10000);
+        ExecutorService executor = Executors.newSingleThreadExecutor();
 
         begin = System.currentTimeMillis(); // Start timing
 
