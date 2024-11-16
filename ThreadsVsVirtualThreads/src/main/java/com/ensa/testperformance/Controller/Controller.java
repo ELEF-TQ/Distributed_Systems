@@ -1,8 +1,8 @@
-package com.oussama.testperformance.Controller;
+package com.ensa.testperformance.Controller;
 
 
-import com.oussama.testperformance.Entity.Product;
-import com.oussama.testperformance.Service.ProductsService;
+import com.ensa.testperformance.Entity.Product;
+import com.ensa.testperformance.Service.ProductsService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import java.util.List;

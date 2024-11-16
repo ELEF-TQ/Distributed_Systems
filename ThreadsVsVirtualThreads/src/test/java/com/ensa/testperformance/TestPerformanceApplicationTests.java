@@ -1,4 +1,4 @@
-package com.oussama.testperformance;
+package com.ensa.testperformance;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

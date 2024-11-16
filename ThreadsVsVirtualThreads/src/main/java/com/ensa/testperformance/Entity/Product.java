@@ -1,4 +1,4 @@
-package com.oussama.testperformance.Entity;
+package com.ensa.testperformance.Entity;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;

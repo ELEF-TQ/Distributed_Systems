@@ -1,8 +1,8 @@
-package com.oussama.testperformance.Service;
+package com.ensa.testperformance.Service;
 
 
-import com.oussama.testperformance.Entity.Product;
-import com.oussama.testperformance.Repository.ProductRepository;
+import com.ensa.testperformance.Repository.ProductRepository;
+import com.ensa.testperformance.Entity.Product;
 import org.apache.commons.lang3.RandomStringUtils;
 import org.apache.commons.lang3.RandomUtils;
 import org.springframework.beans.factory.annotation.Autowired;

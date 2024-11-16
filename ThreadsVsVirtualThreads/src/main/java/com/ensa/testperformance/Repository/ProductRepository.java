@@ -1,6 +1,6 @@
-package com.oussama.testperformance.Repository;
+package com.ensa.testperformance.Repository;
 
-import com.oussama.testperformance.Entity.Product;
+import com.ensa.testperformance.Entity.Product;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 public interface ProductRepository extends JpaRepository<Product,Long> {
