@@ -1,0 +1,7 @@
+spring:
+  application:
+  name: product-service
+  eureka:
+  instance:
+  hostname: localhost
+me: elef.tq@ecommerce.com
