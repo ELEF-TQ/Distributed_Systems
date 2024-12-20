@@ -1,8 +1,7 @@
 spring:
   application:
-    name: product-service
+  name: product-service
   eureka:
-    instance:
-      hostname: localhost
-
+  instance:
+  hostname: localhost
 me: amine.Bahij@ecommerce.com
